@@ -18,6 +18,15 @@
 		1EFDDC2F17D5704900520A3C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC2E17D5704900520A3C /* Default-568h@2x.png */; };
 		1EFDDC3217D5704900520A3C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC3017D5704900520A3C /* MainStoryboard.storyboard */; };
 		1EFDDC3517D5704900520A3C /* JGSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFDDC3417D5704900520A3C /* JGSViewController.m */; };
+		1EFDDC3D17D5708500520A3C /* launch-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC3B17D5708500520A3C /* launch-568@2x.png */; };
+		1EFDDC3E17D5708500520A3C /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC3C17D5708500520A3C /* launch@2x.png */; };
+		1EFDDC4017D5713500520A3C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC3F17D5713500520A3C /* Default@2x.png */; };
+		1EFDDC4217D5713D00520A3C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC4117D5713D00520A3C /* Default-568h@2x.png */; };
+		1EFDDC7417D66F2000520A3C /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC7317D66F2000520A3C /* background@2x.png */; };
+		1EFDDC7717D67A2C00520A3C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC7517D67A2B00520A3C /* icon.png */; };
+		1EFDDC7817D67A2C00520A3C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC7617D67A2C00520A3C /* icon@2x.png */; };
+		1EFDDC7A17D67A4C00520A3C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC7917D67A4C00520A3C /* icon@2x.png */; };
+		1EFDDC7C17D67A5200520A3C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC7B17D67A5200520A3C /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +46,15 @@
 		1EFDDC3117D5704900520A3C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1EFDDC3317D5704900520A3C /* JGSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JGSViewController.h; sourceTree = "<group>"; };
 		1EFDDC3417D5704900520A3C /* JGSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JGSViewController.m; sourceTree = "<group>"; };
+		1EFDDC3B17D5708500520A3C /* launch-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch-568@2x.png"; sourceTree = "<group>"; };
+		1EFDDC3C17D5708500520A3C /* launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@2x.png"; sourceTree = "<group>"; };
+		1EFDDC3F17D5713500520A3C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		1EFDDC4117D5713D00520A3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		1EFDDC7317D66F2000520A3C /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		1EFDDC7517D67A2B00520A3C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1EFDDC7617D67A2C00520A3C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1EFDDC7917D67A4C00520A3C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1EFDDC7B17D67A5200520A3C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,8 @@
 		1EFDDC0C17D5704900520A3C = {
 			isa = PBXGroup;
 			children = (
+				1EFDDC7B17D67A5200520A3C /* icon.png */,
+				1EFDDC7917D67A4C00520A3C /* icon@2x.png */,
 				1EFDDC1E17D5704900520A3C /* Multiplier */,
 				1EFDDC1717D5704900520A3C /* Frameworks */,
 				1EFDDC1617D5704900520A3C /* Products */,
@@ -88,6 +108,7 @@
 				1EFDDC3017D5704900520A3C /* MainStoryboard.storyboard */,
 				1EFDDC3317D5704900520A3C /* JGSViewController.h */,
 				1EFDDC3417D5704900520A3C /* JGSViewController.m */,
+				1EFDDC7217D66EFA00520A3C /* Images */,
 				1EFDDC1F17D5704900520A3C /* Supporting Files */,
 			);
 			path = Multiplier;
@@ -96,6 +117,10 @@
 		1EFDDC1F17D5704900520A3C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1EFDDC4117D5713D00520A3C /* Default-568h@2x.png */,
+				1EFDDC3F17D5713500520A3C /* Default@2x.png */,
+				1EFDDC3B17D5708500520A3C /* launch-568@2x.png */,
+				1EFDDC3C17D5708500520A3C /* launch@2x.png */,
 				1EFDDC2017D5704900520A3C /* Multiplier-Info.plist */,
 				1EFDDC2117D5704900520A3C /* InfoPlist.strings */,
 				1EFDDC2417D5704900520A3C /* main.m */,
@@ -105,6 +130,16 @@
 				1EFDDC2E17D5704900520A3C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1EFDDC7217D66EFA00520A3C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1EFDDC7517D67A2B00520A3C /* icon.png */,
+				1EFDDC7617D67A2C00520A3C /* icon@2x.png */,
+				1EFDDC7317D66F2000520A3C /* background@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +199,15 @@
 				1EFDDC2D17D5704900520A3C /* Default@2x.png in Resources */,
 				1EFDDC2F17D5704900520A3C /* Default-568h@2x.png in Resources */,
 				1EFDDC3217D5704900520A3C /* MainStoryboard.storyboard in Resources */,
+				1EFDDC3D17D5708500520A3C /* launch-568@2x.png in Resources */,
+				1EFDDC3E17D5708500520A3C /* launch@2x.png in Resources */,
+				1EFDDC4017D5713500520A3C /* Default@2x.png in Resources */,
+				1EFDDC4217D5713D00520A3C /* Default-568h@2x.png in Resources */,
+				1EFDDC7417D66F2000520A3C /* background@2x.png in Resources */,
+				1EFDDC7717D67A2C00520A3C /* icon.png in Resources */,
+				1EFDDC7817D67A2C00520A3C /* icon@2x.png in Resources */,
+				1EFDDC7A17D67A4C00520A3C /* icon@2x.png in Resources */,
+				1EFDDC7C17D67A5200520A3C /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +343,7 @@
 				1EFDDC3A17D5704900520A3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
