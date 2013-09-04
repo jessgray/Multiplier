@@ -11,6 +11,12 @@
 
 @interface JGSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numCorrectQuestionsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numTotalQuestionsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *slashLabel;
+@property (weak, nonatomic) IBOutlet UILabel *correctQuestionsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *gameOverLabel;
+
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UILabel *firstMultiplierLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondMultiplierLabel;
@@ -40,6 +46,11 @@
     
     // Hide all elements initially except the start button and initial title for application
     self.titleLabel.hidden = YES;
+    self.numCorrectQuestionsLabel.hidden = YES;
+    self.numTotalQuestionsLabel.hidden = YES;
+    self.slashLabel.hidden = YES;
+    self.gameOverLabel.hidden = YES;
+    self.correctQuestionsLabel.hidden = YES;
     self.progressBar.hidden = YES;
     self.firstMultiplierLabel.hidden = YES;
     self.secondMultiplierLabel.hidden = YES;
@@ -69,10 +80,16 @@
     if([[self.answerSelectorBar titleForSegmentAtIndex:self.answerSelectorBar.selectedSegmentIndex] isEqualToString:_resultLabel.text]) {
         _answerCorrectnessLabel.text = @"Correct!";
         _answerCorrectnessLabel.hidden = NO;
+        _numCorrectAnswers++;
+        [self.numCorrectQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numCorrectAnswers]];
     } else {
         _answerCorrectnessLabel.text = @"Incorrect";
         _answerCorrectnessLabel.hidden = NO;
     }
+    
+    // Increment total number of questions answered
+    self.numTurns++;
+    [self.numTotalQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numTurns]];
         
 }
 
@@ -138,15 +155,25 @@
 
 - (IBAction)startButtonClicked:(id)sender {
     
+    // Make sure that no answers are selected
+    [self.answerSelectorBar setSelectedSegmentIndex: -1];
+    
     // Check if game has been started in order to properly display items on the page
     if(!self.gameStarted) {
         self.gameStarted = YES;
         
         // hide title that is in the middle of the screen
         self.initialTitleLabel.hidden = YES;
+        self.resultLabel.hidden = YES;
+        self.answerCorrectnessLabel.hidden = YES;
+        self.gameOverLabel.hidden = YES;
         
         // unhide all elements except correctness label and result label
         self.titleLabel.hidden = NO;
+        self.numCorrectQuestionsLabel.hidden = NO;
+        self.numTotalQuestionsLabel.hidden = NO;
+        self.slashLabel.hidden = NO;
+        self.correctQuestionsLabel.hidden = NO;
         self.progressBar.hidden = NO;
         self.firstMultiplierLabel.hidden = NO;
         self.secondMultiplierLabel.hidden = NO;
@@ -156,26 +183,39 @@
         
         [self DisplayAnswers];
         
-        [self.answerSelectorBar setSelectedSegmentIndex: -1];
-    
+        [_progressBar setProgress:(0.1*_numTurns) animated: YES];
+        [self.numCorrectQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numCorrectAnswers]];
+        [self.numTotalQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numTurns]];
+        
         // Change text on start button to be "Next"
         [self.startButtonLabel setTitle:@"Next" forState:UIControlStateNormal];
         
-    } else if(self.numTurns == kNumTurns-1) {
+    } else if(self.numTurns == kNumTurns) {
+        
+        // Set progress bar accordingly
+        [_progressBar setProgress:(0.1*_numTurns) animated: YES];
         
         // Change text on start button to be "Reset"
         [self.startButtonLabel setTitle:@"Reset" forState:UIControlStateNormal];
         
-        // Reset game state
+        // Reset game state for the next click
         self.gameStarted = NO;
         self.numTurns = 0;
         self.numCorrectAnswers = 0;
         
-        [self.answerSelectorBar setSelectedSegmentIndex: -1];
+        // Unhide label that says the game is over
+        self.gameOverLabel.hidden = NO;
         
+        // Hide all elements initially except the start button and initial title for application
+        self.titleLabel.hidden = YES;
+        self.firstMultiplierLabel.hidden = YES;
+        self.secondMultiplierLabel.hidden = YES;
+        self.multiplicationSignLabel.hidden = YES;
+        self.multiplicationBar.hidden = YES;
+        self.resultLabel.hidden = YES;
+        self.answerCorrectnessLabel.hidden = YES;
+        self.answerSelectorBar.hidden = YES;
     } else {
-        // Increment the number of turns that has been completed
-        self.numTurns++;
         
         // Hide the result field and correct/incorrect field
         self.resultLabel.hidden = YES;
@@ -184,7 +224,8 @@
         // Show new multiplicands and results
         [self DisplayAnswers];
         
-        [self.answerSelectorBar setSelectedSegmentIndex: -1];
+        // Set progress bar accordingly
+        [_progressBar setProgress:(0.1*_numTurns) animated: YES];
     }
 }
 
