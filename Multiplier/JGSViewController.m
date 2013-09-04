@@ -8,8 +8,16 @@
 
 #import "JGSViewController.h"
 #define kNumTurns 10
+#define kNumAnswers 4
+#define kMaxMultiplier 15
+#define kPlusMinusInterval 5
 
 @interface JGSViewController ()
+@property (weak, nonatomic) IBOutlet UIView *progressBarBackground;
+@property (weak, nonatomic) IBOutlet UIView *multiplicationBackground;
+@property (weak, nonatomic) IBOutlet UIView *answerBackground;
+@property (weak, nonatomic) IBOutlet UILabel *hiddenAnswerLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *numCorrectQuestionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numTotalQuestionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *slashLabel;
@@ -24,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UILabel *initialTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *answerCorrectnessLabel;
+@property (weak, nonatomic) IBOutlet UILabel *selectAnswerLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *answerSelectorBar;
 - (IBAction)answerSelected:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *startButtonLabel;
@@ -44,6 +53,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // Hide all elements initially except the start button and initial title for application
+    self.progressBarBackground.hidden = YES;
+    self.multiplicationBackground.hidden = YES;
+    self.answerBackground.hidden = YES;
     self.numCorrectQuestionsLabel.hidden = YES;
     self.numTotalQuestionsLabel.hidden = YES;
     self.slashLabel.hidden = YES;
@@ -56,7 +68,10 @@
     self.multiplicationBar.hidden = YES;
     self.resultLabel.hidden = YES;
     self.answerCorrectnessLabel.hidden = YES;
+    self.selectAnswerLabel.hidden = YES;
     self.answerSelectorBar.hidden = YES;
+    
+    self.hiddenAnswerLabel.hidden = YES;
     
     // Set initial variables for game
     self.gameStarted = NO;
@@ -76,7 +91,9 @@
     self.startButtonLabel.hidden = NO;
     
     // Hide answer bar
+    self.hiddenAnswerLabel.hidden = YES;
     self.answerSelectorBar.hidden = YES;
+    self.selectAnswerLabel.hidden = YES;
     
     // Show either correct or incorrect based on user's selection
     if([[self.answerSelectorBar titleForSegmentAtIndex:self.answerSelectorBar.selectedSegmentIndex] isEqualToString:_resultLabel.text]) {
@@ -98,64 +115,48 @@
     
 }
 
--(NSArray *)GenerateNumbers {
+-(void)GenerateNumbers {
     NSInteger num1;             // the first multiplicand
     NSInteger num2;             // the second multiplicand
     NSInteger result;           // the result of multiplying num1 * num2
     NSNumber *correctChoice;    // correct answer for the multiplication problem
-    NSNumber *fake1;            // one fake answer to be stored in resArray
-    NSNumber *fake2;            // second fake answer to be stored in resArray
-    NSNumber *fake3;            // third fake answer to be stored in resArray
-        
+    NSNumber *fake1;            // first fake answer to be stored in answerArray
+    NSNumber *fake2;            // second fake answer to be stored in answerArray
+    NSNumber *fake3;            // third fake answer to be stored in answerArray
+    NSUInteger randIndex;       // random index of object in answerArray that is swapped when rearranging the array
+    
     // Generate both multiplicands and the result
-    num1 = arc4random_uniform(15)+1;
-    num2 = arc4random_uniform(15)+1;
+    num1 = arc4random_uniform(kMaxMultiplier)+1;
+    num2 = arc4random_uniform(kMaxMultiplier)+1;
     result = num1*num2;
-    
-    _resultLabel.text = [NSString stringWithFormat:@"%i", result];
-    
     correctChoice = [NSNumber numberWithInteger:(num1*num2)];
     
+    // Update both multipliers as well as the result label
     _firstMultiplierLabel.text = [NSString stringWithFormat:@"%i", num1];
     _secondMultiplierLabel.text = [NSString stringWithFormat:@"%i", num2];
+    _resultLabel.text = [NSString stringWithFormat:@"%i", result];
     
-    
-    // Generate fake answers without duplicates
+    // Generate three fake answers without duplicates
     do {
-        fake1 = [NSNumber numberWithInteger:(result + pow(-1, arc4random_uniform(2))*(arc4random_uniform(5)+1))];
-        fake2 = [NSNumber numberWithInteger:(result + pow(-1, arc4random_uniform(2))*(arc4random_uniform(5)+1))];
-        fake3 = [NSNumber numberWithInteger:(result + pow(-1, arc4random_uniform(2))*(arc4random_uniform(5)+1))];
+        fake1 = [NSNumber numberWithInteger:(result + pow(-1, arc4random_uniform(2))*(arc4random_uniform(kPlusMinusInterval)+1))];
+        fake2 = [NSNumber numberWithInteger:(result + pow(-1, arc4random_uniform(2))*(arc4random_uniform(kPlusMinusInterval)+1))];
+        fake3 = [NSNumber numberWithInteger:(result + pow(-1, arc4random_uniform(2))*(arc4random_uniform(kPlusMinusInterval)+1))];
+        
+    } while ([fake1 intValue] == [fake2 intValue] || [fake1 intValue] == [fake3 intValue]|| [fake2 intValue] == [fake3 intValue] || [fake1 intValue] < 0 || [fake2 intValue] < 0 || [fake3 intValue] < 0);
+    
+    // Create array for answers to be stored in
+    NSMutableArray *answerArray = [NSMutableArray arrayWithObjects:fake1, fake2, fake3, correctChoice, nil];
 
-    } while (fake1 == fake2 || fake1 == fake3 || fake2 == fake3);
+    // Rearrange the array randomly
+    for(NSUInteger i=0; i < kNumAnswers; i++) {
+        randIndex = arc4random_uniform(kNumAnswers);
+        [answerArray exchangeObjectAtIndex:i withObjectAtIndex:randIndex];
+    }
     
-    // Store all answers into an array
-    NSArray *resArray = [NSArray arrayWithObjects:fake1, fake2, fake3, correctChoice, nil];
-    
-    return resArray;
-}
-
--(void)DisplayAnswers {
-    
-    NSInteger index0;
-    NSInteger index1;
-    NSInteger index2;
-    NSInteger index3;
-    
-    do {
-        index0 = arc4random_uniform(4);
-        index1 = arc4random_uniform(4);
-        index2 = arc4random_uniform(4);
-        index3 = arc4random_uniform(4);
-    } while (index0 == index1 || index0 == index2 || index0 == index3 || index1 == index2 || index1 == index3 || index2 == index3);
-    
-    NSArray *answers;
-    answers = [self GenerateNumbers];
-    
-    [_answerSelectorBar setTitle:[NSString stringWithFormat:@"%@", answers[index0]] forSegmentAtIndex:0];
-    [_answerSelectorBar setTitle:[NSString stringWithFormat:@"%@", answers[index1]] forSegmentAtIndex:1];
-    [_answerSelectorBar setTitle:[NSString stringWithFormat:@"%@", answers[index2]] forSegmentAtIndex:2];
-    [_answerSelectorBar setTitle:[NSString stringWithFormat:@"%@", answers[index3]] forSegmentAtIndex:3];
-    
+    // Display answers on the answer bar
+    for(int i=0; i < kNumAnswers; i++) {
+        [_answerSelectorBar setTitle:[NSString stringWithFormat:@"%@", answerArray[i]] forSegmentAtIndex:i];
+    }
 }
 
 - (IBAction)startButtonClicked:(id)sender {
@@ -169,12 +170,14 @@
         
         // hide title that is in the middle of the screen
         self.initialTitleLabel.hidden = YES;
-        self.resultLabel.hidden = YES;
         self.answerCorrectnessLabel.hidden = YES;
         self.gameOverLabel.hidden = YES;
         self.startButtonLabel.hidden = YES;
         
         // unhide all elements except correctness label and result label
+        self.progressBarBackground.hidden = NO;
+        self.multiplicationBackground.hidden = NO;
+        self.answerBackground.hidden = NO;
         self.numCorrectQuestionsLabel.hidden = NO;
         self.numTotalQuestionsLabel.hidden = NO;
         self.slashLabel.hidden = NO;
@@ -184,9 +187,11 @@
         self.secondMultiplierLabel.hidden = NO;
         self.multiplicationSignLabel.hidden = NO;
         self.multiplicationBar.hidden = NO;
+        self.selectAnswerLabel.hidden = NO;
         self.answerSelectorBar.hidden = NO;
+        self.hiddenAnswerLabel.hidden = NO;
         
-        [self DisplayAnswers];
+        [self GenerateNumbers];
         
         [_progressBar setProgress:(0.1*_numTurns) animated: YES];
         [self.numCorrectQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numCorrectAnswers]];
@@ -212,6 +217,9 @@
         self.gameOverLabel.hidden = NO;
         
         // Hide all elements except the reset button
+        self.progressBarBackground.hidden = YES;
+        self.multiplicationBackground.hidden = YES;
+        self.answerBackground.hidden = YES;
         self.numCorrectQuestionsLabel.hidden = YES;
         self.numTotalQuestionsLabel.hidden = YES;
         self.slashLabel.hidden = YES;
@@ -222,12 +230,15 @@
         self.multiplicationSignLabel.hidden = YES;
         self.multiplicationBar.hidden = YES;
         self.resultLabel.hidden = YES;
+        self.hiddenAnswerLabel.hidden = YES;
         self.answerCorrectnessLabel.hidden = YES;
         self.answerSelectorBar.hidden = YES;
     } else {
         
         // Show answer bar
         self.answerSelectorBar.hidden = NO;
+        self.selectAnswerLabel.hidden = NO;
+        self.hiddenAnswerLabel.hidden = NO;
         
         // Hide the result field and correct/incorrect field
         self.resultLabel.hidden = YES;
@@ -235,7 +246,7 @@
         self.startButtonLabel.hidden = YES;
         
         // Show new multiplicands and results
-        [self DisplayAnswers];
+        [self GenerateNumbers];
     }
 }
 
