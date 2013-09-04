@@ -10,7 +10,6 @@
 #define kNumTurns 10
 
 @interface JGSViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numCorrectQuestionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numTotalQuestionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *slashLabel;
@@ -45,7 +44,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // Hide all elements initially except the start button and initial title for application
-    self.titleLabel.hidden = YES;
     self.numCorrectQuestionsLabel.hidden = YES;
     self.numTotalQuestionsLabel.hidden = YES;
     self.slashLabel.hidden = YES;
@@ -177,7 +175,6 @@
         self.startButtonLabel.hidden = YES;
         
         // unhide all elements except correctness label and result label
-        self.titleLabel.hidden = NO;
         self.numCorrectQuestionsLabel.hidden = NO;
         self.numTotalQuestionsLabel.hidden = NO;
         self.slashLabel.hidden = NO;
@@ -215,7 +212,6 @@
         self.gameOverLabel.hidden = NO;
         
         // Hide all elements except the reset button
-        self.titleLabel.hidden = YES;
         self.numCorrectQuestionsLabel.hidden = YES;
         self.numTotalQuestionsLabel.hidden = YES;
         self.slashLabel.hidden = YES;
