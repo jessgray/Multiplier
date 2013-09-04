@@ -76,6 +76,9 @@
     //Unhide result label
     _resultLabel.hidden = NO;
     
+    // Hide answer bar
+    self.answerSelectorBar.hidden = YES;
+    
     // Show either correct or incorrect based on user's selection
     if([[self.answerSelectorBar titleForSegmentAtIndex:self.answerSelectorBar.selectedSegmentIndex] isEqualToString:_resultLabel.text]) {
         _answerCorrectnessLabel.text = @"Correct!";
@@ -216,6 +219,9 @@
         self.answerCorrectnessLabel.hidden = YES;
         self.answerSelectorBar.hidden = YES;
     } else {
+        
+        // Show answer bar
+        self.answerSelectorBar.hidden = NO;
         
         // Hide the result field and correct/incorrect field
         self.resultLabel.hidden = YES;
