@@ -75,6 +75,7 @@
     
     //Unhide result label
     _resultLabel.hidden = NO;
+    self.startButtonLabel.hidden = NO;
     
     // Hide answer bar
     self.answerSelectorBar.hidden = YES;
@@ -173,6 +174,7 @@
         self.resultLabel.hidden = YES;
         self.answerCorrectnessLabel.hidden = YES;
         self.gameOverLabel.hidden = YES;
+        self.startButtonLabel.hidden = YES;
         
         // unhide all elements except correctness label and result label
         self.titleLabel.hidden = NO;
@@ -234,6 +236,7 @@
         // Hide the result field and correct/incorrect field
         self.resultLabel.hidden = YES;
         self.answerCorrectnessLabel.hidden = YES;
+        self.startButtonLabel.hidden = YES;
         
         // Show new multiplicands and results
         [self DisplayAnswers];
