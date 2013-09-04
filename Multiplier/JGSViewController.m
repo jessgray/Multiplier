@@ -93,7 +93,10 @@
     // Increment total number of questions answered
     self.numTurns++;
     [self.numTotalQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numTurns]];
-        
+    
+    // Set progress bar accordingly
+    [_progressBar setProgress:(0.1*_numTurns) animated: YES];
+    
 }
 
 -(NSArray *)GenerateNumbers {
@@ -209,8 +212,13 @@
         // Unhide label that says the game is over
         self.gameOverLabel.hidden = NO;
         
-        // Hide all elements initially except the start button and initial title for application
+        // Hide all elements except the reset button
         self.titleLabel.hidden = YES;
+        self.numCorrectQuestionsLabel.hidden = YES;
+        self.numTotalQuestionsLabel.hidden = YES;
+        self.slashLabel.hidden = YES;
+        self.correctQuestionsLabel.hidden = YES;
+        self.progressBar.hidden = YES;
         self.firstMultiplierLabel.hidden = YES;
         self.secondMultiplierLabel.hidden = YES;
         self.multiplicationSignLabel.hidden = YES;
@@ -229,9 +237,6 @@
         
         // Show new multiplicands and results
         [self DisplayAnswers];
-        
-        // Set progress bar accordingly
-        [_progressBar setProgress:(0.1*_numTurns) animated: YES];
     }
 }
 
