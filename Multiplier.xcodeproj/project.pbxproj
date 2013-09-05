@@ -22,8 +22,6 @@
 		1EFDDC7E17D6C73A00520A3C /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC7D17D6C73A00520A3C /* button.png */; };
 		1EFDDC8917D6D0B400520A3C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC8717D6D0B400520A3C /* icon.png */; };
 		1EFDDC8A17D6D0B400520A3C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC8817D6D0B400520A3C /* icon@2x.png */; };
-		1EFDDC8C17D6D0BC00520A3C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC8B17D6D0BC00520A3C /* icon@2x.png */; };
-		1EFDDC8E17D6D0C200520A3C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC8D17D6D0C200520A3C /* icon.png */; };
 		1EFDDC9017D6DF9B00520A3C /* whitebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC8F17D6DF9B00520A3C /* whitebg.png */; };
 		1EFDDC9317D83E8F00520A3C /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC9117D83E8F00520A3C /* splash.png */; };
 		1EFDDC9417D83E8F00520A3C /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFDDC9217D83E8F00520A3C /* splash@2x.png */; };
@@ -203,8 +201,6 @@
 				1EFDDC7E17D6C73A00520A3C /* button.png in Resources */,
 				1EFDDC8917D6D0B400520A3C /* icon.png in Resources */,
 				1EFDDC8A17D6D0B400520A3C /* icon@2x.png in Resources */,
-				1EFDDC8C17D6D0BC00520A3C /* icon@2x.png in Resources */,
-				1EFDDC8E17D6D0C200520A3C /* icon.png in Resources */,
 				1EFDDC9017D6DF9B00520A3C /* whitebg.png in Resources */,
 				1EFDDC9317D83E8F00520A3C /* splash.png in Resources */,
 				1EFDDC9417D83E8F00520A3C /* splash@2x.png in Resources */,
