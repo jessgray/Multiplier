@@ -96,6 +96,12 @@
     
 }
 
+/*
+ * - Generates two random numbers between 1 and 15 and displays them as multiplicands on the screen
+ * - Multiplies those numbers together to obtain a result, which is the correct answer
+ * - Generates three fake answers all within a range of +- 5 of the result
+ * - Displays all four answers on the screen
+ */
 -(void)GenerateNumbers {
     NSInteger num1, num2;               // the first and second multiplicand
     NSInteger result;                   // the result of multiplying num1 * num2
