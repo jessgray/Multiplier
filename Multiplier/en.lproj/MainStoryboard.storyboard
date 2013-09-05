@@ -13,19 +13,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="z8P-5C-CGY"/>
-                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="whitebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="oVq-VA-toK">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="whitebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="oVq-VA-toK">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="Lsj-yU-RvK"/>
                                     <constraint firstAttribute="width" constant="298" id="Xb5-it-DQJ"/>
                                 </constraints>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="RUs-mV-Kgf">
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="RUs-mV-Kgf">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="273" id="8Os-wF-YVa"/>
                                 </constraints>
                             </progressView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="questions answered correctly" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-6b-8Aj">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="questions answered correctly" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-6b-8Aj">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="213" id="m5b-P3-nk1"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40d-EX-vCJ">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40d-EX-vCJ">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="37i-eX-NAU"/>
                                     <constraint firstAttribute="width" constant="23" id="3m6-ef-GgD"/>
@@ -42,7 +42,7 @@
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="/" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSj-jh-iYi">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="/" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSj-jh-iYi">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="23" id="hiM-R5-w7j"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wx-Jq-ea6">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wx-Jq-ea6">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="23" id="ZUv-FD-TcA"/>
                                 </constraints>
@@ -58,12 +58,12 @@
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" image="whitebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bi3-wA-QEc">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" image="whitebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bi3-wA-QEc">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="254" id="5Nt-GQ-ddv"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Num 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-EI-eM7">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Num 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-EI-eM7">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="2KK-ce-2Zb"/>
                                     <constraint firstAttribute="width" constant="97" id="YqH-Cc-Xox"/>
@@ -72,7 +72,7 @@
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Num 2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-4h-O7j">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Num 2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-4h-O7j">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="9MJ-vM-W0C"/>
                                 </constraints>
@@ -80,15 +80,15 @@
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wji-xn-eV1">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wji-xn-eV1">
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-9C-d5A">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-9C-d5A">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZa-Rm-Va1">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZa-Rm-Va1">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="12" id="4Zr-Wb-vT3"/>
                                     <constraint firstAttribute="height" constant="21" id="RHR-KQ-wWS"/>
@@ -97,13 +97,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" image="whitebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="IqR-LH-Gdo">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" image="whitebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="IqR-LH-Gdo">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="153" id="dnZ-Xv-Ryi"/>
                                 </constraints>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DjM-3L-8Gg">
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DjM-3L-8Gg">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="lGv-ll-5XT"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                     <action selector="answerSelected:" destination="2" eventType="valueChanged" id="Tn3-cw-Kcs"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKm-7b-Z9c">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKm-7b-Z9c">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="R4b-tg-12Y"/>
                                     <constraint firstAttribute="height" constant="51" id="hxI-M3-fda"/>
@@ -144,15 +144,7 @@
                                     <action selector="startButtonClicked:" destination="2" eventType="touchUpInside" id="T7R-48-aMI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Multiplication Exercises" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCA-t9-O4l">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="b7V-lQ-9Y9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="26"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You're Done!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-Fv-dJm">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You're Done!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-Fv-dJm">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="b0n-Ln-LlQ"/>
                                 </constraints>
@@ -160,7 +152,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select an answer:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMD-Fd-Axc">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select an answer:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMD-Fd-Axc">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="G57-oM-DlM"/>
                                     <constraint firstAttribute="width" constant="203" id="f0z-of-wb7"/>
@@ -169,12 +161,20 @@
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8T-hs-byr">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8T-hs-byr">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="aC5-7Z-SAH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.34901960780000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Multiplication Exercises" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCA-t9-O4l">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="b7V-lQ-9Y9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -270,6 +270,38 @@
         <image name="button.png" width="59" height="44"/>
         <image name="whitebg.png" width="640" height="1136"/>
     </resources>
+    <classes>
+        <class className="JGSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JGSViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="answerSelected:"/>
+                <relationship kind="action" name="startButtonClicked:"/>
+                <relationship kind="outlet" name="answerBackground" candidateClass="UIView"/>
+                <relationship kind="outlet" name="answerCorrectnessLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="answerSelectorBar" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="correctQuestionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="firstMultiplierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="gameOverLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hiddenAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="initialTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="multiplicationBackground" candidateClass="UIView"/>
+                <relationship kind="outlet" name="multiplicationBar" candidateClass="UIView"/>
+                <relationship kind="outlet" name="multiplicationSignLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numCorrectQuestionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numTotalQuestionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressBarBackground" candidateClass="UIView"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondMultiplierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="selectAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="slashLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButtonLabel" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

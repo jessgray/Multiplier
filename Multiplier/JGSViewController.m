@@ -52,27 +52,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // Hide all elements initially except the start button and initial title for application
-    self.progressBarBackground.hidden = YES;
-    self.multiplicationBackground.hidden = YES;
-    self.answerBackground.hidden = YES;
-    self.numCorrectQuestionsLabel.hidden = YES;
-    self.numTotalQuestionsLabel.hidden = YES;
-    self.slashLabel.hidden = YES;
-    self.gameOverLabel.hidden = YES;
-    self.correctQuestionsLabel.hidden = YES;
-    self.progressBar.hidden = YES;
-    self.firstMultiplierLabel.hidden = YES;
-    self.secondMultiplierLabel.hidden = YES;
-    self.multiplicationSignLabel.hidden = YES;
-    self.multiplicationBar.hidden = YES;
-    self.resultLabel.hidden = YES;
-    self.answerCorrectnessLabel.hidden = YES;
-    self.selectAnswerLabel.hidden = YES;
-    self.answerSelectorBar.hidden = YES;
-    
-    self.hiddenAnswerLabel.hidden = YES;
-    
     // Set initial variables for game
     self.gameStarted = NO;
     self.numTurns = 0;
