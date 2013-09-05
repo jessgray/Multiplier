@@ -13,6 +13,7 @@
 #define kPlusMinusInterval 5        // the +- interval in which all fake answers must be from the real answer
 
 @interface JGSViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *progressBarBackground;         // background area of the progress bar 
 @property (weak, nonatomic) IBOutlet UIView *multiplicationBackground;      // background area of the multiplication problem 
 @property (weak, nonatomic) IBOutlet UIView *answerBackground;              // background area of the answer section 
