@@ -55,9 +55,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // Set initial variables for game
-    _gameStarted = NO;
-    _numTurns = 0;
-    _numCorrectAnswers = 0;
+    self.gameStarted = NO;
+    self.numTurns = 0;
+    self.numCorrectAnswers = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,32 +68,32 @@
 - (IBAction)answerSelected:(id)sender {
     
     // Unhide the real answer to the problem and the button that says 'next'
-    _resultLabel.hidden = NO;
-    _startButtonLabel.hidden = NO;
+    self.resultLabel.hidden = NO;
+    self.startButtonLabel.hidden = NO;
     
     // Hide the answer bar and the '?'
-    _hiddenAnswerLabel.hidden = YES;
-    _answerSelectorBar.hidden = YES;
-    _selectAnswerLabel.hidden = YES;
+    self.hiddenAnswerLabel.hidden = YES;
+    self.answerSelectorBar.hidden = YES;
+    self.selectAnswerLabel.hidden = YES;
     
     // Show either correct or incorrect based on user's selection
     if([[self.answerSelectorBar titleForSegmentAtIndex:self.answerSelectorBar.selectedSegmentIndex] isEqualToString:self.resultLabel.text]) {
-        _answerCorrectnessLabel.text = @"Correct!";
-        _answerCorrectnessLabel.hidden = NO;
-        _numCorrectAnswers++;
+        self.answerCorrectnessLabel.text = @"Correct!";
+        self.answerCorrectnessLabel.hidden = NO;
+        self.numCorrectAnswers++;
         
-        [_numCorrectQuestionsLabel setText:[NSString stringWithFormat:@"%i", _numCorrectAnswers]];
+        [self.numCorrectQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numCorrectAnswers]];
     } else {
-        _answerCorrectnessLabel.text = @"Incorrect";
-        _answerCorrectnessLabel.hidden = NO;
+        self.answerCorrectnessLabel.text = @"Incorrect";
+        self.answerCorrectnessLabel.hidden = NO;
     }
     
     // Increment total number of questions answered
-    _numTurns++;
+    self.numTurns++;
     
     // Set progress bar accordingly
-    [_numTotalQuestionsLabel setText:[NSString stringWithFormat:@"%i", _numTurns]];
-    [_progressBar setProgress:(0.1*_numTurns) animated: YES];
+    [self.numTotalQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numTurns]];
+    [self.progressBar setProgress:(0.1*self.numTurns) animated: YES];
     
 }
 
@@ -117,9 +117,9 @@
     correctChoice = [NSNumber numberWithInteger:(num1*num2)];
     
     // Update both multipliers as well as the result label
-    _firstMultiplierLabel.text = [NSString stringWithFormat:@"%i", num1];
-    _secondMultiplierLabel.text = [NSString stringWithFormat:@"%i", num2];
-    _resultLabel.text = [NSString stringWithFormat:@"%i", result];
+    self.firstMultiplierLabel.text = [NSString stringWithFormat:@"%i", num1];
+    self.secondMultiplierLabel.text = [NSString stringWithFormat:@"%i", num2];
+    self.resultLabel.text = [NSString stringWithFormat:@"%i", result];
     
     // Generate three fake answers without duplicates, all within the range -+5 + result. Ensure there are no negatives or zero values
     do {
@@ -141,102 +141,102 @@
     
     // Display answers on the answer bar
     for(int i=0; i < kNumAnswers; i++) {
-        [_answerSelectorBar setTitle:[NSString stringWithFormat:@"%@", answerArray[i]] forSegmentAtIndex:i];
+        [self.answerSelectorBar setTitle:[NSString stringWithFormat:@"%@", answerArray[i]] forSegmentAtIndex:i];
     }
 }
 
 - (IBAction)startButtonClicked:(id)sender {
     
     // Make sure that no answers are selected
-    [_answerSelectorBar setSelectedSegmentIndex: -1];
+    [self.answerSelectorBar setSelectedSegmentIndex: -1];
     
     // Check if game has been started, is ending, or is in the middle of game play
     if(!self.gameStarted) {
         
         // Game has now started
-        _gameStarted = YES;
+        self.gameStarted = YES;
         
         // Hide items only viewed at the very beginning or end of game play
-        _initialTitleLabel.hidden = YES;
-        _gameOverLabel.hidden = YES;
+        self.initialTitleLabel.hidden = YES;
+        self.gameOverLabel.hidden = YES;
         
         // Hide items that can only be seen once the user has answered a question
-        _answerCorrectnessLabel.hidden = YES;
-        _startButtonLabel.hidden = YES;
+        self.answerCorrectnessLabel.hidden = YES;
+        self.startButtonLabel.hidden = YES;
         
         // Unhide all other elements
-        _progressBarBackground.hidden = NO;
-        _multiplicationBackground.hidden = NO;
-        _answerBackground.hidden = NO;
-        _numCorrectQuestionsLabel.hidden = NO;
-        _numTotalQuestionsLabel.hidden = NO;
-        _slashLabel.hidden = NO;
-        _correctQuestionsLabel.hidden = NO;
-        _progressBar.hidden = NO;
-        _firstMultiplierLabel.hidden = NO;
-        _secondMultiplierLabel.hidden = NO;
-        _multiplicationSignLabel.hidden = NO;
-        _multiplicationBar.hidden = NO;
-        _selectAnswerLabel.hidden = NO;
-        _answerSelectorBar.hidden = NO;
-        _hiddenAnswerLabel.hidden = NO;
+        self.progressBarBackground.hidden = NO;
+        self.multiplicationBackground.hidden = NO;
+        self.answerBackground.hidden = NO;
+        self.numCorrectQuestionsLabel.hidden = NO;
+        self.numTotalQuestionsLabel.hidden = NO;
+        self.slashLabel.hidden = NO;
+        self.correctQuestionsLabel.hidden = NO;
+        self.progressBar.hidden = NO;
+        self.firstMultiplierLabel.hidden = NO;
+        self.secondMultiplierLabel.hidden = NO;
+        self.multiplicationSignLabel.hidden = NO;
+        self.multiplicationBar.hidden = NO;
+        self.selectAnswerLabel.hidden = NO;
+        self.answerSelectorBar.hidden = NO;
+        self.hiddenAnswerLabel.hidden = NO;
         
         // Call function to generate the multiplcands, the result, and the answers
         [self GenerateNumbers];
         
         // Set progress bar initially
-        [_progressBar setProgress:(0.1*_numTurns) animated: YES];
-        [_numCorrectQuestionsLabel setText:[NSString stringWithFormat:@"%i", _numCorrectAnswers]];
-        [_numTotalQuestionsLabel setText:[NSString stringWithFormat:@"%i", _numTurns]];
+        [self.progressBar setProgress:(0.1*self.numTurns) animated: YES];
+        [self.numCorrectQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numCorrectAnswers]];
+        [self.numTotalQuestionsLabel setText:[NSString stringWithFormat:@"%i", self.numTurns]];
         
         // Change text on start button to be "Next"
-        [_startButtonLabel setTitle:@"Next" forState:UIControlStateNormal];
+        [self.startButtonLabel setTitle:@"Next" forState:UIControlStateNormal];
         
     } else if(self.numTurns == kNumTurns) {
         
         // Set progress bar accordingly
-        [_progressBar setProgress:(0.1*_numTurns) animated: YES];
+        [self.progressBar setProgress:(0.1*self.numTurns) animated: YES];
         
         // Change text on start button to be "Reset"
-        [_startButtonLabel setTitle:@"Reset" forState:UIControlStateNormal];
+        [self.startButtonLabel setTitle:@"Reset" forState:UIControlStateNormal];
         
         // Reset game state in order for the game to be played over again
-        _gameStarted = NO;
-        _numTurns = 0;
-        _numCorrectAnswers = 0;
+        self.gameStarted = NO;
+        self.numTurns = 0;
+        self.numCorrectAnswers = 0;
         
         // Show that the game is over
-        _gameOverLabel.hidden = NO;
+        self.gameOverLabel.hidden = NO;
         
         // Hide all other elements
-        _progressBarBackground.hidden = YES;
-        _multiplicationBackground.hidden = YES;
-        _answerBackground.hidden = YES;
-        _numCorrectQuestionsLabel.hidden = YES;
-        _numTotalQuestionsLabel.hidden = YES;
-        _slashLabel.hidden = YES;
-        _correctQuestionsLabel.hidden = YES;
-        _progressBar.hidden = YES;
-        _firstMultiplierLabel.hidden = YES;
-        _secondMultiplierLabel.hidden = YES;
-        _multiplicationSignLabel.hidden = YES;
-        _multiplicationBar.hidden = YES;
-        _resultLabel.hidden = YES;
-        _hiddenAnswerLabel.hidden = YES;
-        _answerCorrectnessLabel.hidden = YES;
-        _answerSelectorBar.hidden = YES;
+        self.progressBarBackground.hidden = YES;
+        self.multiplicationBackground.hidden = YES;
+        self.answerBackground.hidden = YES;
+        self.numCorrectQuestionsLabel.hidden = YES;
+        self.numTotalQuestionsLabel.hidden = YES;
+        self.slashLabel.hidden = YES;
+        self.correctQuestionsLabel.hidden = YES;
+        self.progressBar.hidden = YES;
+        self.firstMultiplierLabel.hidden = YES;
+        self.secondMultiplierLabel.hidden = YES;
+        self.multiplicationSignLabel.hidden = YES;
+        self.multiplicationBar.hidden = YES;
+        self.resultLabel.hidden = YES;
+        self.hiddenAnswerLabel.hidden = YES;
+        self.answerCorrectnessLabel.hidden = YES;
+        self.answerSelectorBar.hidden = YES;
         
     } else {
         
         // Show answer bar and the ?
-        _answerSelectorBar.hidden = NO;
-        _selectAnswerLabel.hidden = NO;
-        _hiddenAnswerLabel.hidden = NO;
+        self.answerSelectorBar.hidden = NO;
+        self.selectAnswerLabel.hidden = NO;
+        self.hiddenAnswerLabel.hidden = NO;
         
         // Hide the result, correct/incorrect field, and the start button since the user must select an answer first
-        _resultLabel.hidden = YES;
-        _answerCorrectnessLabel.hidden = YES;
-        _startButtonLabel.hidden = YES;
+        self.resultLabel.hidden = YES;
+        self.answerCorrectnessLabel.hidden = YES;
+        self.startButtonLabel.hidden = YES;
         
         // Show new multiplicands and results
         [self GenerateNumbers];
